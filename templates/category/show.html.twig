@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+<h1>{{title}}</h1>
+<div>
+{% for game in category.games %}
+    <span>{{game.title}}</span>
+    <img src="{{asset('upload/'~ game.picture)}}" alt="..." class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{game.title}}</h5>
+            <p class="card-text">{{game.description}}</p>
+            <a href="{{path('app_show_boardgame',{id:game.id}) }}"></a>
+        </div>
+</div>
+{% endfor %}
+
+<p>{{game.description()}}</p>
+{% endblock %}

@@ -1,0 +1,33 @@
+h1 {
+    color: #7e8baf;
+    font-family: 'Tourney', cursive;
+    font-size: 3.5em;
+    text-align: center;
+    text-shadow: 2px 1px 2px grey;
+}
+
+h5 {
+    font-family: 'Genos', sans-serif;
+}
+
+.nav-item {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#show_title {
+    font-size: 3.8em;
+}
+
+#card_unit {
+    box-shadow: -4px 3px 14px darkgrey;
+}
+
+#title_unit {
+    box-shadow: -1px 1px 8px darkgrey;
+    border-radius: 10px;
+}
+
+p {
+    text-align: justify;
+}

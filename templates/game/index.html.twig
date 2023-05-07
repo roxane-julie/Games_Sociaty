@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game's Sociaty{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% include "./Includes/navigation.html.twig" %}
+<div class="example-wrapper">
+        <h1>Game's Land Sociaty</h1>
+    </div>
+    <div class="container mt-5">
+        <div class="row ">
+            {% for game in boardgames %}
+                <div id="card_unit" class="card bg-light mb-3 ms-2" style="max-width: 20rem;">
+                    <img src="uploads/{{game.picture}}" class="card-img-top rounded d-block mx-auto mt-3 w-50 h-75 shadow" alt="">
+                    <div class="card-body d-flex flex-column justify-content-around align-items-center" >
+                        <h5 id="title_unit"class="card-title text-center alert alert-dismissible alert-light" style="text-shadow: 0.2px 1px 2px grey !important;">{{game.title}}</h5>
+                        <p class="card-text">{{game.description | striptags | slice(0, 50)}}...</p>
+                        <ul style="padding-left: 0rem !important">
+                        {% for cat in game.categories %}
+                            <li>{{cat}}</li>
+                        {% endfor %}
+                        <a href="{{path('app_show_game', {id: game.id})}}" class="btn btn-outline-light" style="text-shadow: 0.2px 1px 2px grey !important";>Voir</a> 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+<footer class="footer d-flex flex-wrap justify-content-between align-items-center py-4 mt-5 border-top navbar navbar-expand-lg bg-light">
+    <div class="col-md-4 d-flex align-items-center">
+        <span class="ms-5 mb-3 mb-md-0 text-muted">© 2023 ||Game's Land Sociaty</span>
+    </div>
+
+    <ul class="me-5 nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" href="https://twitter.com/Toulouse" target="_blank"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#twitter"></use>
+                </svg><i class="fa-brands fa-square-twitter"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/toulousefr/?hl=fr" target="_blank"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#instagram"></use>
+                </svg><i class="fa-brands fa-instagram"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="https://fr-fr.facebook.com/Toulouse/" target="_blank"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#facebook"></use>
+                </svg><i class="fa-brands fa-square-facebook"></i></a></li>
+        <l
+    </ul>
+</footer>
+
+
+    
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+
+<div class="card mb-3 mt-5">
+<h1 id="show_title" class="text-center mt-4" style="text-shadow: 2px 1px 2px grey !important"; >{{title}}</h1>
+
+  <div class="card-body">
+    <h6 class="card-subtitle text-muted text-center">Pour tout la famille !</h6>
+  </div>
+  
+      <img src="{{asset('uploads/'~ game.picture)}}" alt="..." class="img-fluid w-25 d-block mx-auto rounded shadow-lg mt-5">
+
+        <p class="card-text mt-5 mx-5">{{game.description}}</p>
+
+  <div class="card-body">
+    
+    Pour l'acheter c'est par ici -> <button type="button" class="btn btn-secondary"><a href="https://www.espritjeu.com/" class="card-link">Le bon plan</a></button>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+{% endblock %}
